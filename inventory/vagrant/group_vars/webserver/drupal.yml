@@ -22,6 +22,7 @@ drupal_trusted_hosts:
 drupal_site_default_settings: "{{ drupal_core_path }}/sites/default/settings.php"
 drupal_trusted_hosts_file: "{{ drupal_site_default_settings }}"
 drupal_public_filesystem: "{{ drupal_core_path }}/sites/default/files"
+drupal_private_filesystem: "{{ drupal_core_path }}/../private_files"
 drupal_external_libraries_directory: "{{ drupal_core_path }}/libraries"
 fedora_base_url: "http://{{ hostvars[groups['tomcat'][0]].ansible_host }}:8080/fcrepo/rest/"
 drupal_jsonld_remove_format: true
