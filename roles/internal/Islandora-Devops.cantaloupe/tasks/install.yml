@@ -23,3 +23,14 @@
     path: "{{ cantaloupe_log_path }}"
     owner: "{{ cantaloupe_user }}"
     group: "{{ cantaloupe_group }}"
+
+- name: Download delegates.rb
+  get_url:
+    url: "https://raw.githubusercontent.com/Islandora-Devops/isle-buildkit/main/cantaloupe/rootfs/opt/cantaloupe/delegates.rb"
+    dest: "{{ cantaloupe_symlink }}/delegates.rb"
+    owner: "{{ cantaloupe_user }}"
+    group: "{{ cantaloupe_group }}"
+  retries: 5
+  register: result
+  until: result is succeeded
+  
