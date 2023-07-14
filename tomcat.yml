@@ -22,7 +22,7 @@
     - name: geerlingguy.repo-epel
       when: "ansible_os_family == 'RedHat' and islandora_build_base_box|bool == True"
     - role: Islandora-Devops.cantaloupe
-      when: islandora_build_base_box|bool == True
+      #when: islandora_build_base_box|bool == True
     - role: Islandora-Devops.activemq
       when: islandora_build_base_box|bool == True
     - name: Islandora-Devops.fits
